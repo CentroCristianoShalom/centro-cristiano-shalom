@@ -754,3 +754,171 @@ html {
         max-height: 65px;
     }
 }
+
+
+/* ==========================
+   SECCIÓN NOSOTROS
+========================== */
+
+.nosotros-seccion {
+    background: #f5f8fc;
+    padding: 90px 20px;
+    scroll-margin-top: 90px;
+}
+
+.nosotros-contenedor {
+    max-width: 1150px;
+    margin: 0 auto;
+}
+
+/* ENCABEZADO */
+
+.nosotros-encabezado {
+    text-align: center;
+    margin-bottom: 55px;
+}
+
+.nosotros-etiqueta {
+    color: #38a9e8;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 3px;
+}
+
+.nosotros-encabezado h2 {
+    color: #0b1f3a;
+    font-size: clamp(28px, 4vw, 42px);
+    margin: 15px 0;
+}
+
+.nosotros-encabezado p {
+    color: #64748b;
+    max-width: 650px;
+    margin: 0 auto;
+    line-height: 1.8;
+}
+
+/* PRESENTACIÓN */
+
+.nosotros-presentacion {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 55px;
+    align-items: center;
+    margin-bottom: 55px;
+}
+
+.nosotros-imagen {
+    background: #dfeaf4;
+    border-radius: 20px;
+    overflow: hidden;
+    min-height: 330px;
+}
+
+.imagen-pendiente {
+    min-height: 330px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #617f9b;
+}
+
+.imagen-pendiente span {
+    font-size: 50px;
+}
+
+.imagen-pendiente p {
+    margin: 15px 0 5px;
+}
+
+.nosotros-texto {
+    text-align: left;
+}
+
+.nosotros-texto h3 {
+    color: #0b1f3a;
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+.nosotros-texto p {
+    color: #64748b;
+    line-height: 1.9;
+    margin-bottom: 18px;
+}
+
+.nosotros-texto strong {
+    color: #38a9e8;
+    font-size: 18px;
+}
+
+/* MISIÓN Y VISIÓN */
+
+.nosotros-tarjetas {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+
+.nosotros-card {
+    background: white;
+    padding: 35px;
+    border-radius: 18px;
+    border: 1px solid #e5edf5;
+    text-align: left;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.nosotros-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+}
+
+.nosotros-icono {
+    font-size: 38px;
+    color: #38a9e8;
+    margin-bottom: 15px;
+}
+
+.nosotros-card h3 {
+    color: #0b1f3a;
+    font-size: 23px;
+    margin-bottom: 15px;
+}
+
+.nosotros-card p {
+    color: #64748b;
+    line-height: 1.8;
+}
+
+/* DISEÑO RESPONSIVO */
+
+@media (max-width: 768px) {
+
+    .nosotros-seccion {
+        padding: 65px 20px;
+    }
+
+    .nosotros-presentacion {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .nosotros-tarjetas {
+        grid-template-columns: 1fr;
+    }
+
+    .nosotros-imagen,
+    .imagen-pendiente {
+        min-height: 250px;
+    }
+
+    .nosotros-texto h3 {
+        font-size: 26px;
+    }
+
+    .nosotros-card {
+        padding: 28px;
+    }
+}
