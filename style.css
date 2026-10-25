@@ -735,10 +735,10 @@ html {
 
 .nav-brand img.nav-logo {
     display: block;
-    width: 140px;
-    max-width: 140px;
-    height: 65px;
-    max-height: 65px;
+    width: 150px;
+    max-width: 150px;
+    height: 75px;
+    max-height: 75px;
     object-fit: contain;
     object-position: left center;
 }
