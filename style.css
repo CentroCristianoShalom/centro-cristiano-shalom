@@ -723,6 +723,7 @@ html {
     scroll-margin-top: 80px;
 }
 
+
 /* LOGO DE NAVEGACIÓN */
 
 .nav-brand {
@@ -734,9 +735,10 @@ html {
 
 .nav-brand img.nav-logo {
     display: block;
-    width: 100px;
+    width: 140px;
     max-width: 140px;
-    height: 20px;
+    height: 65px;
+    max-height: 65px;
     object-fit: contain;
     object-position: left center;
 }
@@ -748,5 +750,6 @@ html {
         width: 115px;
         max-width: 115px;
         height: 55px;
+        max-height: 55px;
     }
 }
