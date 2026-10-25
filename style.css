@@ -11,90 +11,24 @@ body{
 
 }
 
+    
+/* ============================
+   PORTADA PRINCIPAL
+============================ */
 
+.hero {
+    width: 100%;
+    aspect-ratio: 1649 / 928;
+    height: auto;
+    min-height: 0;
+    padding: 0;
+    margin: 0;
 
-.hero{
-
-    min-height:600px;
-
-    background:
-    linear-gradient(
-    rgba(5,20,40,0.75),
-    rgba(5,20,40,0.75)
-    ),
-    url("images/portada.jpg");
-
-
-    background-size:cover;
-    background-position:center;
-
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-
-    text-align:center;
-
-    color:white;
-
+    background-image: url("Images/PortadaShalom.jpg");
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
 }
-
-.hero h1{
-
-    font-size:45px;
-    margin:10px;
-
-}
-
-
-
-.hero p{
-
-    font-size:25px;
-
-}
-
-
-
-.botones{
-
-    margin-top:30px;
-
-}
-
-
-
-.btn{
-
-    display:inline-block;
-
-    padding:14px 25px;
-
-    margin:10px;
-
-    border-radius:30px;
-
-    background:#42b5ff;
-
-    color:white;
-
-    text-decoration:none;
-
-    font-weight:bold;
-
-}
-
-
-
-.btn:hover{
-
-    background:white;
-
-    color:#0b1f3a;
-
-}
-
-
 
 .bienvenida{
 
@@ -136,7 +70,7 @@ html {
     position: sticky;
     top: 0;
     z-index: 1000;
-    padding: 18px 5%;
+    padding: 7px 5%;
 }
 
 .nav-container {
@@ -205,14 +139,6 @@ html {
 
     .nav-links.active {
         display: flex;
-    }
-
-    .hero h1 {
-        font-size: 32px;
-    }
-
-    .hero p {
-        font-size: 20px;
     }
 }
 /* SECCIONES GENERALES */
@@ -686,30 +612,6 @@ section {
     scroll-margin-top: 75px;
 }
 
-@media (max-width: 600px) {
-
-    .hero {
-        min-height: 550px;
-        padding: 50px 20px;
-    }
-
-    .hero h1 {
-        font-size: 30px;
-    }
-
-    .hero p {
-        font-size: 19px;
-    }
-
-    .btn {
-        padding: 12px 18px;
-        font-size: 14px;
-    }
-
-    .nav-brand {
-        font-size: 16px;
-    }
-}
 
 /* NAVEGACIÓN ENTRE SECCIONES */
 
@@ -736,10 +638,10 @@ html {
 
 .nav-brand img.nav-logo {
     display: block;
-    width: 160px;
-    max-width: 160px;
-    height: 75px;
-    max-height: 75px;
+    width: 140px;
+    max-width: 140px;
+    height: 55px;
+    max-height: 55px;
     object-fit: contain;
     object-position: left center;
 }
@@ -1034,3 +936,21 @@ html {
     }
 
 }
+
+
+
+/* PORTADA EN CELULARES */
+
+@media (max-width: 768px) {
+
+    .hero {
+        width: 100%;
+        aspect-ratio: 16 / 9;
+        min-height: 0;
+        padding: 0;
+        background-size: contain;
+        background-position: center;
+    }
+
+}
+
