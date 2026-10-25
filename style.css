@@ -1,0 +1,738 @@
+*{
+    box-sizing:border-box;
+}
+
+
+body{
+
+    margin:0;
+    font-family:Arial, sans-serif;
+    color:#333;
+
+}
+
+
+
+.hero{
+
+    min-height:600px;
+
+    background:
+    linear-gradient(
+    rgba(5,20,40,0.75),
+    rgba(5,20,40,0.75)
+    ),
+    url("images/portada.jpg");
+
+
+    background-size:cover;
+    background-position:center;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+
+    text-align:center;
+
+    color:white;
+
+}
+
+
+
+.logo{
+
+    width:420px;
+    max-width: 90%;
+    height: 240px;
+    object-fit: contain;
+    margin-bottom:20px;
+
+}
+
+
+
+.hero h1{
+
+    font-size:45px;
+    margin:10px;
+
+}
+
+
+
+.hero p{
+
+    font-size:25px;
+
+}
+
+
+
+.botones{
+
+    margin-top:30px;
+
+}
+
+
+
+.btn{
+
+    display:inline-block;
+
+    padding:14px 25px;
+
+    margin:10px;
+
+    border-radius:30px;
+
+    background:#42b5ff;
+
+    color:white;
+
+    text-decoration:none;
+
+    font-weight:bold;
+
+}
+
+
+
+.btn:hover{
+
+    background:white;
+
+    color:#0b1f3a;
+
+}
+
+
+
+.bienvenida{
+
+    padding:60px 20px;
+
+    text-align:center;
+
+}
+
+
+
+.bienvenida h2{
+
+    font-size:35px;
+
+}
+
+
+
+footer{
+
+    background:#0b1f3a;
+
+    color:white;
+
+    text-align:center;
+
+    padding:20px;
+
+}
+/* BARRA DE NAVEGACIÓN */
+
+html {
+    scroll-behavior: smooth;
+}
+
+.navbar {
+    background: #0b1f3a;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding: 18px 5%;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.nav-brand {
+    color: #42b5ff;
+    font-size: 20px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 15px;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #42b5ff;
+}
+
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+/* ADAPTACIÓN PARA CELULARES */
+
+@media (max-width: 850px) {
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: #0b1f3a;
+        flex-direction: column;
+        padding: 25px;
+        gap: 20px;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .hero h1 {
+        font-size: 32px;
+    }
+
+    .hero p {
+        font-size: 20px;
+    }
+}
+/* SECCIONES GENERALES */
+
+.seccion {
+    padding: 80px 20px;
+    text-align: center;
+    scroll-margin-top: 90px;
+}
+
+.seccion h2 {
+    font-size: 32px;
+    color: #0b1f3a;
+}
+
+.seccion p {
+    font-size: 17px;
+    line-height: 1.7;
+}
+
+/* TRANSMISIONES */
+
+#envivo {
+    background: #f1f6fb;
+}
+
+.contenido-seccion {
+    background: white;
+    max-width: 700px;
+    margin: 30px auto;
+    padding: 35px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+}
+
+/* CONTACTO */
+
+.contacto {
+    background: #ffffff;
+}
+
+/* NAVEGACIÓN SUAVE */
+
+html {
+    scroll-behavior: smooth;
+}
+/* MINISTERIOS */
+
+.ministerios {
+    background: #f5f8fc;
+}
+
+.subtitulo {
+    max-width: 650px;
+    margin: 0 auto 40px;
+    color: #64748b;
+}
+
+.ministerios-grid {
+    max-width: 1100px;
+    margin: 40px auto 0;
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+}
+
+.ministerio-card {
+    background: white;
+    padding: 40px 25px;
+    border-radius: 18px;
+
+    box-shadow: 0 6px 25px rgba(0,0,0,0.07);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.ministerio-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+}
+
+.ministerio-icono {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.ministerio-card h3 {
+    color: #0b1f3a;
+    font-size: 21px;
+}
+
+.ministerio-card p {
+    color: #64748b;
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+/* CELULARES */
+
+@media (max-width: 768px) {
+    .ministerios-grid {
+        grid-template-columns: 1fr;
+        max-width: 420px;
+    }
+}
+
+
+/* HORARIOS DE REUNIONES */
+
+.horarios {
+    background: #ffffff;
+}
+
+.horarios-grid {
+    max-width: 1100px;
+    margin: 40px auto 0;
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+}
+
+.horario-card {
+    background: #f5f8fc;
+    padding: 35px 20px;
+    border-radius: 18px;
+    border: 1px solid #e5edf5;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.horario-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.horario-icono {
+    font-size: 42px;
+    margin-bottom: 15px;
+}
+
+.horario-card h3 {
+    color: #0b1f3a;
+    font-size: 24px;
+}
+
+.horario-card p {
+    color: #64748b;
+    min-height: 45px;
+}
+
+.hora {
+    display: block;
+    color: #38a9e8;
+    font-size: 25px;
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+.transmision {
+    display: block;
+    color: #d62828;
+    font-size: 12px;
+    font-weight: bold;
+    margin-top: 18px;
+}
+
+/* TABLETAS */
+
+@media (max-width: 1000px) {
+    .horarios-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* CELULARES */
+
+@media (max-width: 600px) {
+    .horarios-grid {
+        grid-template-columns: 1fr;
+        max-width: 420px;
+    }
+}
+
+
+
+/* SECCIÓN REDES SOCIALES */
+
+.redes-seccion {
+    background: #0b1f3a;
+    padding: 90px 20px;
+    text-align: center;
+    color: white;
+}
+
+.redes-contenedor {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.redes-etiqueta {
+    display: block;
+    color: #42b5ff;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    margin-bottom: 18px;
+}
+
+.redes-seccion h2 {
+    color: white;
+    font-size: clamp(30px, 4vw, 44px);
+    margin: 0 0 20px;
+}
+
+.redes-descripcion {
+    max-width: 650px;
+    margin: 0 auto 45px;
+    color: #c3d2e5;
+    line-height: 1.8;
+}
+
+/* TARJETAS */
+
+.redes-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 25px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.red-card {
+    background: #172e4b;
+    border: 1px solid #294462;
+    border-radius: 20px;
+    padding: 40px 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.red-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.25);
+}
+
+.red-icono {
+    width: 75px;
+    height: 75px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 18px;
+    font-size: 42px;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 20px;
+}
+
+.facebook-card .red-icono {
+    background: #1877f2;
+}
+
+.youtube-card .red-icono {
+    background: #e52230;
+}
+
+.red-card h3 {
+    color: white;
+    font-size: 25px;
+    margin: 10px 0;
+}
+
+.red-card p {
+    color: #c3d2e5;
+    font-size: 15px;
+    line-height: 1.8;
+    flex-grow: 1;
+}
+
+/* BOTONES */
+
+.red-btn {
+    display: inline-block;
+    width: 100%;
+    max-width: 290px;
+    padding: 15px 20px;
+    margin-top: 25px;
+    border-radius: 10px;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    transition: filter 0.3s, transform 0.3s;
+}
+
+.facebook-card .red-btn {
+    background: #1877f2;
+}
+
+.youtube-card .red-btn {
+    background: #e52230;
+}
+
+.red-btn:hover {
+    filter: brightness(1.15);
+    transform: scale(1.03);
+}
+
+.redes-pie {
+    color: #90abc7;
+    font-size: 13px;
+    margin-top: 45px;
+}
+
+/* CELULARES */
+
+@media (max-width: 768px) {
+    .redes-grid {
+        grid-template-columns: 1fr;
+        max-width: 450px;
+    }
+
+    .redes-seccion {
+        padding: 65px 20px;
+    }
+
+    .red-card {
+        padding: 35px 22px;
+    }
+}
+
+/* CORRECCIÓN DEL FONDO DE TRANSMISIONES */
+
+section#envivo.redes-seccion {
+    background-color: #0b1f3a;
+    background-image: none;
+    color: #ffffff;
+}
+
+section#envivo.redes-seccion h2 {
+    color: #ffffff;
+}
+
+section#envivo.redes-seccion .redes-descripcion {
+    color: #c3d2e5;
+}
+
+
+/* UBICACIÓN Y CONTACTO */
+
+.contacto-nueva {
+    background: #f5f8fc;
+    padding: 90px 20px;
+}
+
+.contacto-contenedor {
+    max-width: 1150px;
+    margin: auto;
+}
+
+.contacto-etiqueta {
+    color: #38a9e8;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 3px;
+}
+
+.contacto-nueva h2 {
+    font-size: 40px;
+    color: #0b1f3a;
+    margin: 15px 0;
+}
+
+.contacto-descripcion {
+    max-width: 650px;
+    margin: 0 auto 45px;
+    color: #64748b;
+    line-height: 1.8;
+}
+
+.contacto-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.3fr;
+    gap: 30px;
+    text-align: left;
+    align-items: stretch;
+}
+
+.contacto-info {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.contacto-dato {
+    background: white;
+    padding: 25px;
+    border-radius: 16px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+}
+
+.contacto-dato h3 {
+    color: #0b1f3a;
+    margin: 0 0 15px;
+}
+
+.contacto-dato p {
+    color: #64748b;
+    margin: 6px 0;
+    font-size: 15px;
+}
+
+.contacto-btn {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 12px 22px;
+    background: #38a9e8;
+    color: white;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.contacto-btn:hover {
+    background: #0b1f3a;
+}
+
+.contacto-mapa {
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+    min-height: 400px;
+}
+
+.contacto-mapa iframe {
+    display: block;
+    width: 100%;
+    height: 100%;
+    min-height: 400px;
+}
+
+/* CELULARES */
+
+@media (max-width: 768px) {
+    .contacto-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .contacto-nueva h2 {
+        font-size: 32px;
+    }
+
+    .contacto-mapa {
+        min-height: 350px;
+    }
+
+    .contacto-mapa iframe {
+        min-height: 350px;
+    }
+}
+
+/* AJUSTES GENERALES PARA CELULARES */
+
+img {
+    max-width: 100%;
+}
+
+section {
+    scroll-margin-top: 75px;
+}
+
+@media (max-width: 600px) {
+
+    .hero {
+        min-height: 550px;
+        padding: 50px 20px;
+    }
+
+    .hero h1 {
+        font-size: 30px;
+    }
+
+    .hero p {
+        font-size: 19px;
+    }
+
+    .btn {
+        padding: 12px 18px;
+        font-size: 14px;
+    }
+
+    .nav-brand {
+        font-size: 16px;
+    }
+}
+
+/* NAVEGACIÓN ENTRE SECCIONES */
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
+}
+
+#inicio,
+#nosotros {
+    scroll-margin-top: 80px;
+}
