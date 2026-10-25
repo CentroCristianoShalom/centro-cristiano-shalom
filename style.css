@@ -39,20 +39,6 @@ body{
 
 }
 
-
-
-.logo{
-
-    width:420px;
-    max-width: 90%;
-    height: 240px;
-    object-fit: contain;
-    margin-bottom:20px;
-
-}
-
-
-
 .hero h1{
 
     font-size:45px;
@@ -735,4 +721,39 @@ html {
 #inicio,
 #nosotros {
     scroll-margin-top: 80px;
+}
+
+/* LOGO EN BARRA DE NAVEGACIÓN */
+
+.navbar {
+    padding: 5px 5%;
+}
+
+.nav-brand {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.nav-logo {
+    width: 170px;
+    height: 65px;
+    object-fit: contain;
+    object-position: left center;
+    display: block;
+}
+
+/* AJUSTES PARA CELULARES */
+
+@media (max-width: 600px) {
+
+    .navbar {
+        padding: 5px 20px;
+    }
+
+    .nav-logo {
+        width: 140px;
+        height: 55px;
+    }
+
 }
