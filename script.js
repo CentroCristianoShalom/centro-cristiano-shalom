@@ -19,3 +19,28 @@ document.querySelectorAll(".nav-links a").forEach(link => {
     });
 
 });
+
+
+/* NAVEGACIÓN ACTIVA */
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    const enlaces = document.querySelectorAll(
+        ".nav-links .nav-link"
+    );
+
+    enlaces.forEach(enlace => {
+
+        enlace.addEventListener("click", () => {
+
+            enlaces.forEach(item => {
+                item.classList.remove("active");
+            });
+
+            enlace.classList.add("active");
+
+        });
+
+    });
+
+});

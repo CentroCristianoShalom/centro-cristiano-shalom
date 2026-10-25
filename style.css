@@ -922,3 +922,115 @@ html {
         padding: 28px;
     }
 }
+
+
+/* ================================
+   MENÚ MODERNO SHALOM - OPCIÓN 8
+================================ */
+
+/* Menú de escritorio */
+
+@media (min-width: 769px) {
+
+    .nav-links {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        list-style: none;
+    }
+
+    .nav-links li {
+        list-style: none;
+    }
+
+    .nav-links .nav-link {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 9px;
+
+        padding: 16px 12px;
+        color: #ffffff;
+        text-decoration: none;
+        font-size: 15px;
+        font-weight: 500;
+
+        transition: color 0.3s ease;
+    }
+
+    /* Iconos */
+
+    .nav-links .nav-link i {
+        font-size: 19px;
+        transition: transform 0.3s ease;
+    }
+
+    /* Línea luminosa */
+
+    .nav-links .nav-link::after {
+        content: "";
+        position: absolute;
+        bottom: 4px;
+        left: 12%;
+        width: 76%;
+        height: 3px;
+
+        background: #38b6ff;
+        border-radius: 5px;
+
+        box-shadow:
+            0 0 8px #38b6ff,
+            0 0 16px rgba(56,182,255,0.6);
+
+        transform: scaleX(0);
+        transition: transform 0.3s ease;
+    }
+
+    /* Efecto al pasar el mouse */
+
+    .nav-links .nav-link:hover {
+        color: #38b6ff;
+    }
+
+    .nav-links .nav-link:hover i {
+        transform: translateY(-3px);
+    }
+
+    .nav-links .nav-link:hover::after,
+    .nav-links .nav-link.active::after {
+        transform: scaleX(1);
+    }
+
+    /* Sección activa */
+
+    .nav-links .nav-link.active {
+        color: #38b6ff;
+    }
+
+}
+
+/* MENÚ PARA CELULARES */
+
+@media (max-width: 768px) {
+
+    .nav-links .nav-link {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        color: white;
+        text-decoration: none;
+        padding: 12px 15px;
+    }
+
+    .nav-links .nav-link i {
+        width: 24px;
+        font-size: 18px;
+        text-align: center;
+    }
+
+    .nav-links .nav-link.active {
+        color: #38b6ff;
+    }
+
+}
