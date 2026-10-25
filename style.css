@@ -724,6 +724,7 @@ html {
 }
 
 
+
 /* LOGO DE NAVEGACIÓN */
 
 .nav-brand {
@@ -735,8 +736,8 @@ html {
 
 .nav-brand img.nav-logo {
     display: block;
-    width: 150px;
-    max-width: 150px;
+    width: 160px;
+    max-width: 160px;
     height: 75px;
     max-height: 75px;
     object-fit: contain;
@@ -747,9 +748,9 @@ html {
 
 @media (max-width: 600px) {
     .nav-brand img.nav-logo {
-        width: 115px;
-        max-width: 115px;
-        height: 55px;
-        max-height: 55px;
+        width: 130px;
+        max-width: 130px;
+        height: 65px;
+        max-height: 65px;
     }
 }
