@@ -723,37 +723,30 @@ html {
     scroll-margin-top: 80px;
 }
 
-/* LOGO EN BARRA DE NAVEGACIÓN */
-
-.navbar {
-    padding: 5px 5%;
-}
+/* LOGO DE NAVEGACIÓN */
 
 .nav-brand {
     display: flex;
     align-items: center;
+    flex-shrink: 0;
     text-decoration: none;
 }
 
-.nav-logo {
-    width: 170px;
-    height: 65px;
+.nav-brand img.nav-logo {
+    display: block;
+    width: 140px;
+    max-width: 140px;
+    height: 60px;
     object-fit: contain;
     object-position: left center;
-    display: block;
 }
 
 /* AJUSTES PARA CELULARES */
 
 @media (max-width: 600px) {
-
-    .navbar {
-        padding: 5px 20px;
-    }
-
-    .nav-logo {
-        width: 140px;
+    .nav-brand img.nav-logo {
+        width: 115px;
+        max-width: 115px;
         height: 55px;
     }
-
 }
