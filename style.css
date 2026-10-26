@@ -207,22 +207,53 @@ html {
 }
 
 .ministerio-card {
-    background: white;
-    padding: 40px 25px;
+    background: #ffffff;
+    padding: 0;
     border-radius: 18px;
-
+    overflow: hidden;
+    border: 1px solid #e5edf5;
     box-shadow: 0 6px 25px rgba(0,0,0,0.07);
-    transition: transform 0.3s, box-shadow 0.3s;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
 
 .ministerio-card:hover {
     transform: translateY(-8px);
     box-shadow: 0 12px 30px rgba(0,0,0,0.12);
 }
 
-.ministerio-icono {
-    font-size: 48px;
-    margin-bottom: 20px;
+
+/* FOTOGRAFÍAS DE MINISTERIOS */
+
+.ministerio-imagen {
+    width: 100%;
+    height: 190px;
+    overflow: hidden;
+    background: #dfeaf4;
+}
+
+.ministerio-imagen img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.4s ease;
+}
+
+.ministerio-card:hover .ministerio-imagen img {
+    transform: scale(1.07);
+}
+
+/* CONTENIDO DE LAS TARJETAS */
+
+.ministerio-contenido {
+    padding: 22px 20px 28px;
+}
+
+.ministerio-contenido h3 {
+    margin-top: 0;
+    margin-bottom: 12px;
 }
 
 .ministerio-card h3 {
