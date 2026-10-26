@@ -240,7 +240,7 @@ html {
 
 @media (max-width: 768px) {
     .ministerios-grid {
-        grid-template-columns: repeat(2,1fr);
+        grid-template-columns: 1fr;
         max-width: 420px;
     }
 }
@@ -317,7 +317,7 @@ html {
 
 @media (max-width: 600px) {
     .horarios-grid {
-        grid-template-columns: repeat(2,1fr);
+        grid-template-columns: 1fr;
         max-width: 420px;
     }
 }
