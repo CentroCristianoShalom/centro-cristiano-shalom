@@ -719,21 +719,24 @@ html {
     min-height: 330px;
 }
 
-.imagen-pendiente {
-    min-height: 330px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    color: #617f9b;
+
+/* FOTOGRAFÍA DE LA IGLESIA */
+
+.foto-iglesia {
+    display: block;
+    width: 100%;
+    height: 330px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 20px;
 }
 
-.imagen-pendiente span {
-    font-size: 50px;
-}
+/* ADAPTACIÓN A CELULARES */
 
-.imagen-pendiente p {
-    margin: 15px 0 5px;
+@media (max-width: 768px) {
+    .foto-iglesia {
+        height: 250px;
+    }
 }
 
 .nosotros-texto {
