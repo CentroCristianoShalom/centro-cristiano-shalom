@@ -121,3 +121,82 @@ document.addEventListener("DOMContentLoaded", () => {
     actualizarMenuActivo();
 
 });
+
+
+/* =================================
+   CARRUSEL DE FOTOGRAFÍAS
+================================= */
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    const pista = document.querySelector(".galeria-pista");
+    const ventana = document.querySelector(".galeria-ventana");
+    const fotos = Array.from(pista.querySelectorAll("img"));
+    const anterior = document.querySelector(".galeria-flecha.anterior");
+    const siguiente = document.querySelector(".galeria-flecha.siguiente");
+
+    const visor = document.getElementById("galeria-visor");
+    const imagenGrande = visor.querySelector("img");
+    const cerrar = visor.querySelector(".galeria-cerrar");
+
+    let indice = 0;
+
+    function fotosVisibles() {
+        return window.matchMedia("(max-width: 768px)").matches ? 1 : 3;
+    }
+
+    function actualizarCarrusel() {
+        const visibles = fotosVisibles();
+        const maximo = Math.max(0, fotos.length - visibles);
+
+        indice = Math.min(indice, maximo);
+
+        const distancia = fotos[indice].offsetLeft - fotos[0].offsetLeft;
+
+        pista.style.transform = `translateX(-${distancia}px)`;
+
+        anterior.disabled = indice === 0;
+        siguiente.disabled = indice === maximo;
+    }
+
+    anterior.addEventListener("click", () => {
+        indice = Math.max(0, indice - 1);
+        actualizarCarrusel();
+    });
+
+    siguiente.addEventListener("click", () => {
+        indice = Math.min(fotos.length - fotosVisibles(), indice + 1);
+        actualizarCarrusel();
+    });
+
+    fotos.forEach(foto => {
+        foto.addEventListener("click", () => {
+            imagenGrande.src = foto.src;
+            imagenGrande.alt = foto.alt;
+            visor.hidden = false;
+            cerrar.focus();
+        });
+    });
+
+    function cerrarVisor() {
+        visor.hidden = true;
+        imagenGrande.removeAttribute("src");
+    }
+
+    cerrar.addEventListener("click", cerrarVisor);
+
+    visor.addEventListener("click", evento => {
+        if (evento.target === visor) cerrarVisor();
+    });
+
+    document.addEventListener("keydown", evento => {
+        if (evento.key === "Escape" && !visor.hidden) {
+            cerrarVisor();
+        }
+    });
+
+    window.addEventListener("resize", actualizarCarrusel);
+
+    actualizarCarrusel();
+
+});

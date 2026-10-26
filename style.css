@@ -962,3 +962,133 @@ html {
 
 }
 
+
+/* =================================
+   GALERÍA FOTOGRÁFICA SHALOM
+================================= */
+
+.galeria-seccion {
+    background: #ffffff;
+    padding: 55px 20px;
+}
+
+.galeria-etiqueta {
+    color: #38a9e8;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 3px;
+}
+
+.galeria-seccion h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    color: #0b1f3a;
+    margin: 15px 0;
+}
+
+.galeria-contenedor {
+    max-width: 1150px;
+    margin: 35px auto 0;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.galeria-ventana {
+    overflow: hidden;
+    flex: 1;
+    min-width: 0;
+}
+
+.galeria-pista {
+    display: flex;
+    gap: 20px;
+    transition: transform 0.45s ease;
+}
+
+.galeria-pista img {
+    flex: 0 0 calc((100% - 40px) / 3);
+    width: calc((100% - 40px) / 3);
+    height: 230px;
+    object-fit: cover;
+    border-radius: 16px;
+    cursor: pointer;
+    transition: filter 0.3s;
+}
+
+.galeria-pista img:hover {
+    filter: brightness(0.85);
+}
+
+.galeria-flecha {
+    flex-shrink: 0;
+    width: 45px;
+    height: 45px;
+    border: none;
+    border-radius: 50%;
+    background: #0b1f3a;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.galeria-flecha:hover {
+    background: #38a9e8;
+}
+
+.galeria-flecha:disabled {
+    opacity: 0.35;
+    cursor: not-allowed;
+}
+
+/* FOTOGRAFÍA AMPLIADA */
+
+.galeria-visor:not([hidden]) {
+    position: fixed;
+    inset: 0;
+    z-index: 2000;
+    background: rgba(0, 0, 0, 0.9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 20px;
+}
+
+.galeria-visor img {
+    max-width: 95%;
+    max-height: 85vh;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+}
+
+.galeria-cerrar {
+    position: absolute;
+    top: 15px;
+    right: 25px;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 40px;
+    cursor: pointer;
+}
+
+/* CELULARES */
+
+@media (max-width: 768px) {
+    .galeria-pista img {
+        flex-basis: 100%;
+        width: 100%;
+        height: 260px;
+    }
+
+    .galeria-contenedor {
+        gap: 8px;
+    }
+
+    .galeria-flecha {
+        width: 35px;
+        height: 35px;
+    }
+}
