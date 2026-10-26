@@ -690,9 +690,14 @@ html {
 }
 
 .nosotros-encabezado h2 {
-    color: #0b1f3a;
+    font-family: 'Montserrat', sans-serif;
     font-size: clamp(28px, 4vw, 42px);
+    font-weight: 800;
+    color: #0b1f3a;
     margin: 15px 0;
+    letter-spacing: -1px;
+    line-height: 1.25;
+    text-transform: uppercase;
 }
 
 .nosotros-encabezado p {
