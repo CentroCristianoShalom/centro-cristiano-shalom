@@ -1293,3 +1293,176 @@ html {
 .evento-imagen {
     cursor: zoom-in;
 }
+
+/* ====================================
+   DISEÑO MODERNO - REUNIONES
+==================================== */
+
+.horarios {
+    background: #f5f8fc;
+    padding: 75px 20px;
+}
+
+.horarios h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(28px, 4vw, 40px);
+    font-weight: 800;
+    color: #0b1f3a;
+    letter-spacing: -1px;
+    margin-bottom: 15px;
+}
+
+.horarios .subtitulo {
+    color: #64748b;
+    margin-bottom: 38px;
+}
+
+/* Distribución de tarjetas */
+
+.horarios-grid {
+    max-width: 1150px;
+    margin: 35px auto 0;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 22px;
+}
+
+/* Tarjetas */
+
+.horario-card {
+    position: relative;
+    overflow: hidden;
+    background: #ffffff;
+    border: 1px solid #e3ebf5;
+    border-radius: 20px;
+    padding: 38px 20px 32px;
+    min-height: 310px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    box-shadow: 0 8px 28px rgba(11, 31, 58, 0.06);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
+}
+
+/* Línea decorativa superior */
+
+.horario-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: #0b1f3a;
+}
+
+/* Efecto hover */
+
+.horario-card:hover {
+    transform: translateY(-9px);
+    border-color: #38b6ff;
+    box-shadow: 0 18px 38px rgba(11, 31, 58, 0.13);
+}
+
+/* Títulos de los días */
+
+.horario-card h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 21px;
+    font-weight: 800;
+    color: #0b1f3a;
+    margin: 12px 0;
+}
+
+/* Descripciones */
+
+.horario-card p {
+    color: #64748b;
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+/* Iconos existentes */
+
+.horario-card .horario-icono,
+.horario-card .horario-icon {
+    font-size: 32px;
+    width: 68px;
+    height: 68px;
+    background: #eaf5ff;
+    border-radius: 18px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 15px;
+
+    transition: transform 0.3s ease;
+}
+
+.horario-card:hover .horario-icono,
+.horario-card:hover .horario-icon {
+    transform: scale(1.1);
+}
+
+/* Destacar reunión del domingo */
+
+.horario-card:nth-child(4) {
+    border-color: #b9dfff;
+}
+
+.horario-card:nth-child(4)::before {
+    background: #38b6ff;
+}
+
+/* Diseño responsivo */
+
+@media (max-width: 992px) {
+    .horarios-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 550px) {
+    .horarios-grid {
+        grid-template-columns: 1fr;
+        max-width: 380px;
+    }
+
+    .horario-card {
+        min-height: 270px;
+    }
+}
+
+/* Iconos profesionales de reuniones */
+
+.horario-card .horario-icono {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 72px;
+    height: 72px;
+    margin: 0 auto 15px;
+
+    background: #eaf5ff;
+    border-radius: 20px;
+
+    font-size: 30px;
+    color: #168bd0;
+
+    transition: transform 0.3s ease,
+                background 0.3s ease;
+}
+
+.horario-card:hover .horario-icono {
+    transform: scale(1.1);
+    background: #d8efff;
+}
