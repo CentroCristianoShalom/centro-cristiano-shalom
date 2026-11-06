@@ -1123,3 +1123,173 @@ html {
         height: 35px;
     }
 }
+
+
+/* ====================================
+   PRÓXIMOS EVENTOS - CENTRO SHALOM
+==================================== */
+
+.proximos-eventos {
+    background: #0b1f3a;
+    padding: 65px 20px;
+    color: #ffffff;
+}
+
+.eventos-encabezado {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.eventos-etiqueta {
+    color: #42b5ff;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 3px;
+}
+
+.proximos-eventos .eventos-encabezado h2 {
+    font-family: 'Montserrat', sans-serif;
+    color: #ffffff;
+    font-size: clamp(28px, 4vw, 42px);
+    font-weight: 800;
+    margin: 15px 0;
+}
+
+.eventos-encabezado p {
+    color: #d1deed;
+}
+
+.eventos-lista {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    gap: 28px;
+}
+
+.evento-tarjeta {
+    display: grid;
+    grid-template-columns: minmax(220px, 340px) 1fr;
+    gap: 30px;
+    align-items: center;
+
+    padding: 22px;
+    background: #132e50;
+    border: 1px solid #254363;
+    border-radius: 20px;
+    text-align: left;
+}
+
+.evento-imagen {
+    width: 100%;
+    max-height: 420px;
+    object-fit: contain;
+    border-radius: 12px;
+}
+
+.evento-info h3 {
+    font-family: 'Montserrat', sans-serif;
+    color: #ffffff;
+    font-size: clamp(22px, 3vw, 30px);
+    margin: 10px 0 18px;
+}
+
+.evento-destacado {
+    color: #42b5ff;
+    font-size: 12px;
+    letter-spacing: 2px;
+    font-weight: bold;
+}
+
+.evento-dato {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin: 12px 0;
+    color: #e3ecf7;
+}
+
+.evento-dato i {
+    color: #42b5ff;
+    margin-top: 3px;
+}
+
+.evento-descripcion {
+    color: #d1deed;
+    margin-top: 18px;
+    line-height: 1.7;
+}
+
+.eventos-vacios {
+    max-width: 650px;
+    margin: 30px auto;
+    color: #d1deed;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .evento-tarjeta {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 16px;
+    }
+
+    .evento-imagen {
+        max-height: 500px;
+    }
+
+    .evento-info {
+        padding: 5px;
+    }
+}
+
+/* ====================================
+   VISOR DE FLYERS - PRÓXIMOS EVENTOS
+==================================== */
+
+.visor-eventos:not([hidden]) {
+    position: fixed;
+    inset: 0;
+    z-index: 3000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.94);
+    padding: 55px 15px 25px;
+    overflow-y: auto;
+}
+
+.visor-eventos[hidden] {
+    display: none;
+}
+
+.visor-eventos img {
+    display: block;
+    max-width: 95%;
+    max-height: calc(100dvh - 90px);
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    border-radius: 8px;
+}
+
+.cerrar-visor-eventos {
+    position: fixed;
+    top: 12px;
+    right: 22px;
+    color: #ffffff;
+    font-size: 42px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 3001;
+    line-height: 1;
+}
+
+.cerrar-visor-eventos:hover {
+    color: #42b5ff;
+}
+
+/* Indicar que el cartel se puede ampliar */
+.evento-imagen {
+    cursor: zoom-in;
+}

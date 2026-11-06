@@ -200,3 +200,201 @@ document.addEventListener("DOMContentLoaded", () => {
     actualizarCarrusel();
 
 });
+
+
+/* ====================================
+   PRÓXIMOS EVENTOS
+==================================== */
+
+// Agrega aquí los próximos eventos.
+// Formato de fecha: AAAA-MM-DD
+
+const proximosEventos = [
+    {
+        titulo: "Mujer, cuidando el corazón de tu marido",
+        fecha: "2026-11-10",
+        hora: "19:00",
+        lugar: "Centro Cristiano Shalom",
+        descripcion: "Conferencia para mujeres.",
+        imagen: "Images/Eventos/conferencia mujeres.jpg"
+    }
+    
+];
+
+function iniciarProximosEventos() {
+    const contenedor = document.getElementById("lista-proximos-eventos");
+    const mensajeVacio = document.getElementById("eventos-vacios");
+
+    if (!contenedor || !mensajeVacio) return;
+
+    contenedor.replaceChildren();
+
+    // Solo mostrar eventos con fecha válida que no hayan pasado.
+    const hoy = new Date();
+    hoy.setHours(0, 0, 0, 0);
+
+    const eventosVigentes = proximosEventos
+        .filter(evento => {
+            const fecha = new Date(evento.fecha + "T00:00:00");
+            return !isNaN(fecha.getTime()) && fecha >= hoy;
+        })
+        .sort((a, b) => a.fecha.localeCompare(b.fecha));
+
+    mensajeVacio.hidden = eventosVigentes.length > 0;
+
+    eventosVigentes.forEach((evento, indice) => {
+        const tarjeta = document.createElement("article");
+        tarjeta.className = "evento-tarjeta";
+
+        const imagen = document.createElement("img");
+        imagen.className = "evento-imagen";
+        imagen.src = evento.imagen;
+        imagen.alt = "Cartel del evento " + evento.titulo;
+        imagen.loading = "lazy";
+        
+        imagen.tabIndex = 0;
+        imagen.setAttribute("role", "button");
+        imagen.setAttribute("aria-label", "Ampliar cartel de " + evento.titulo);
+
+        imagen.addEventListener("click", () => {
+            abrirVisorEventos(evento.imagen, evento.titulo);
+        });
+
+        imagen.addEventListener("keydown", (e) => {
+            if (e.key === "Enter" || e.key === " ") {
+                e.preventDefault();
+                abrirVisorEventos(evento.imagen, evento.titulo);
+            }
+        });
+
+
+        const info = document.createElement("div");
+        info.className = "evento-info";
+
+        const etiqueta = document.createElement("span");
+        etiqueta.className = "evento-destacado";
+        etiqueta.textContent = indice === 0
+            ? "PRÓXIMO EVENTO"
+            : "AGENDA SHALOM";
+
+        const titulo = document.createElement("h3");
+        titulo.textContent = evento.titulo;
+
+        const fechaFormateada = new Date(
+            evento.fecha + "T00:00:00"
+        ).toLocaleDateString("es-MX", {
+            day: "numeric",
+            month: "long",
+            year: "numeric"
+        });
+
+        function crearDato(icono, texto) {
+            const fila = document.createElement("div");
+            fila.className = "evento-dato";
+
+            const i = document.createElement("i");
+            i.className = icono;
+            i.setAttribute("aria-hidden", "true");
+
+            const span = document.createElement("span");
+            span.textContent = texto;
+
+            fila.append(i, span);
+            return fila;
+        }
+
+        const descripcion = document.createElement("p");
+        descripcion.className = "evento-descripcion";
+        descripcion.textContent = evento.descripcion;
+
+        info.append(
+            etiqueta,
+            titulo,
+            crearDato("far fa-calendar-alt", fechaFormateada),
+            crearDato("far fa-clock", evento.hora),
+            crearDato("fas fa-map-marker-alt", evento.lugar),
+            descripcion
+        );
+
+        tarjeta.append(imagen, info);
+        contenedor.appendChild(tarjeta);
+    });
+}
+
+if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", iniciarProximosEventos);
+} else {
+    iniciarProximosEventos();
+}
+
+/* ====================================
+   AMPLIAR FLYERS DE EVENTOS
+==================================== */
+
+let elementoAnteriorVisor = null;
+
+function abrirVisorEventos(rutaImagen, tituloEvento) {
+    const visor = document.getElementById("visor-eventos");
+    const imagen = document.getElementById("imagen-visor-eventos");
+
+    if (!visor || !imagen) return;
+
+    elementoAnteriorVisor = document.activeElement;
+
+    imagen.src = rutaImagen;
+    imagen.alt = "Cartel ampliado de " + tituloEvento;
+
+    visor.hidden = false;
+    document.body.style.overflow = "hidden";
+
+    document.getElementById("cerrar-visor-eventos").focus();
+}
+
+function cerrarVisorEventos() {
+    const visor = document.getElementById("visor-eventos");
+    const imagen = document.getElementById("imagen-visor-eventos");
+
+    if (!visor || visor.hidden) return;
+
+    visor.hidden = true;
+    imagen.removeAttribute("src");
+    document.body.style.overflow = "";
+
+    if (elementoAnteriorVisor) {
+        elementoAnteriorVisor.focus();
+    }
+}
+
+function configurarVisorEventos() {
+    const visor = document.getElementById("visor-eventos");
+    const botonCerrar = document.getElementById("cerrar-visor-eventos");
+
+    if (!visor || !botonCerrar) return;
+
+    botonCerrar.addEventListener("click", cerrarVisorEventos);
+
+    visor.addEventListener("click", (e) => {
+        if (e.target === visor) {
+            cerrarVisorEventos();
+        }
+    });
+
+    document.addEventListener("keydown", (e) => {
+        if (visor.hidden) return;
+
+        if (e.key === "Escape") {
+            cerrarVisorEventos();
+        }
+
+        if (e.key === "Tab") {
+            e.preventDefault();
+            botonCerrar.focus();
+        }
+    });
+}
+
+if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", configurarVisorEventos);
+} else {
+    configurarVisorEventos();
+}
