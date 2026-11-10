@@ -119,7 +119,10 @@ html {
 
 /* ADAPTACIÓN PARA CELULARES */
 
-@media (max-width: 850px) {
+
+/* MENÚ DESPLEGABLE PARA TABLETS Y CELULARES */
+
+@media (max-width: 1200px) {
 
     .menu-toggle {
         display: block;
@@ -131,8 +134,12 @@ html {
         top: 100%;
         left: 0;
         width: 100%;
+        max-height: calc(100dvh - 75px);
+        overflow-y: auto;
+
         background: #0b1f3a;
         flex-direction: column;
+        align-items: center;
         padding: 25px;
         gap: 20px;
     }
@@ -141,6 +148,7 @@ html {
         display: flex;
     }
 }
+
 /* SECCIONES GENERALES */
 
 .seccion {
@@ -873,7 +881,7 @@ html {
 
 /* Menú de escritorio */
 
-@media (min-width: 769px) {
+@media (min-width: 1201px) {
 
     .nav-links {
         display: flex;
@@ -955,7 +963,7 @@ html {
 
 /* MENÚ PARA CELULARES */
 
-@media (max-width: 768px) {
+@media (max-width: 1200px) {
 
     .nav-links .nav-link {
         display: flex;
