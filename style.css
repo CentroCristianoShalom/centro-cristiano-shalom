@@ -1466,3 +1466,357 @@ html {
     transform: scale(1.1);
     background: #d8efff;
 }
+
+/* =========================================
+   CONÓCENOS - CENTRO CRISTIANO SHALOM
+========================================= */
+
+.nosotros-seccion {
+    background: #f5f8fc;
+    padding: 70px 20px;
+    scroll-margin-top: 90px;
+}
+
+.shalom-bienvenida,
+.shalom-pilares,
+.shalom-proposito {
+    max-width: 1150px;
+    margin: 0 auto;
+}
+
+/* ENCABEZADOS */
+
+.shalom-etiqueta {
+    display: block;
+    color: #38a9e8;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-align: center;
+}
+
+.shalom-bienvenida > h2,
+.shalom-encabezado h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(27px, 4vw, 40px);
+    font-weight: 800;
+    color: #0b1f3a;
+    text-align: center;
+    margin: 16px 0;
+    line-height: 1.25;
+}
+
+.shalom-introduccion {
+    max-width: 790px;
+    margin: 0 auto 42px;
+    text-align: center;
+    color: #64748b;
+    font-size: 17px;
+    line-height: 1.8;
+}
+
+/* FOTOGRAFÍA Y BIENVENIDA */
+
+.shalom-presentacion {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 45px;
+    align-items: center;
+}
+
+.shalom-fotografia img {
+    display: block;
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 20px;
+    box-shadow: 0 12px 35px rgba(11,31,58,0.12);
+}
+
+.shalom-mensaje h3 {
+    font-family: 'Montserrat', sans-serif;
+    color: #0b1f3a;
+    font-size: 25px;
+    margin: 0 0 20px;
+}
+
+.shalom-mensaje p {
+    font-size: 16px;
+    line-height: 1.9;
+    color: #52657b;
+    margin-bottom: 18px;
+}
+
+.shalom-lema {
+    display: inline-block;
+    color: #168bd0;
+    font-size: 18px;
+    font-weight: 700;
+    margin-top: 10px;
+}
+
+/* =========================================
+   LOS CINCO PILARES
+========================================= */
+
+.shalom-pilares {
+    margin-top: 90px;
+}
+
+.shalom-encabezado {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.shalom-encabezado p {
+    color: #64748b;
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+.shalom-pilares-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+}
+
+/* TARJETA NORMAL */
+
+.shalom-pilar {
+    width: 100%;
+    height: 310px;
+    padding: 24px;
+    border: 1px solid #e0e9f3;
+    border-radius: 20px;
+    background: #ffffff;
+    box-shadow: 0 8px 26px rgba(11,31,58,0.07);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    cursor: default;
+
+    transition:
+        background 0.4s ease,
+        transform 0.4s ease,
+        box-shadow 0.4s ease,
+        border-color 0.4s ease;
+}
+
+/* ICONO */
+
+.shalom-pilar-icono {
+    width: 72px;
+    height: 72px;
+    flex-shrink: 0;
+    border-radius: 20px;
+    background: #eaf5ff;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #168bd0;
+    font-size: 30px;
+
+    transition:
+        background 0.4s ease,
+        color 0.4s ease,
+        transform 0.4s ease;
+}
+
+/* TÍTULO */
+
+.shalom-pilar-titulo {
+    color: #0b1f3a;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.4;
+
+    transition: color 0.4s ease;
+}
+
+/* DESCRIPCIÓN OCULTA */
+
+.shalom-pilar-descripcion {
+    display: block;
+    max-height: 0;
+    overflow: hidden;
+
+    color: #e1ebf5;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 1.7;
+
+    opacity: 0;
+    transform: translateY(12px);
+
+    transition:
+        max-height 0.5s ease,
+        opacity 0.4s ease,
+        transform 0.4s ease;
+}
+
+/* =========================================
+   EFECTO AL PASAR EL MOUSE
+========================================= */
+
+/* Cambiar toda la tarjeta */
+
+.shalom-pilar:hover,
+.shalom-pilar:focus-visible {
+    background: #0b1f3a;
+    border-color: #38b6ff;
+
+    transform: translateY(-7px);
+
+    box-shadow: 0 18px 40px rgba(11,31,58,0.2);
+}
+
+/* Cambiar el icono */
+
+.shalom-pilar:hover .shalom-pilar-icono,
+.shalom-pilar:focus-visible .shalom-pilar-icono {
+    background: #173e63;
+    color: #38b6ff;
+    transform: scale(0.85);
+}
+
+/* Cambiar el título */
+
+.shalom-pilar:hover .shalom-pilar-titulo,
+.shalom-pilar:focus-visible .shalom-pilar-titulo {
+    color: #ffffff;
+}
+
+/* Mostrar automáticamente la descripción */
+
+.shalom-pilar:hover .shalom-pilar-descripcion,
+.shalom-pilar:focus-visible .shalom-pilar-descripcion {
+    max-height: 190px;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* =========================================
+   MISIÓN Y VISIÓN
+========================================= */
+
+.shalom-proposito {
+    margin-top: 90px;
+}
+
+.shalom-proposito-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 28px;
+}
+
+.shalom-proposito-card {
+    padding: 42px 35px;
+    text-align: center;
+
+    background: #ffffff;
+    border: 1px solid #e0e9f3;
+    border-radius: 20px;
+
+    box-shadow: 0 8px 26px rgba(11,31,58,0.07);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.shalom-proposito-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 16px 35px rgba(11,31,58,0.13);
+}
+
+.shalom-proposito-icono {
+    width: 75px;
+    height: 75px;
+    margin: 0 auto 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 20px;
+    background: #eaf5ff;
+
+    color: #168bd0;
+    font-size: 30px;
+}
+
+.shalom-proposito-card h3 {
+    color: #0b1f3a;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 23px;
+    margin-bottom: 18px;
+}
+
+.shalom-proposito-card p {
+    color: #64748b;
+    font-size: 16px;
+    line-height: 1.9;
+}
+
+/* =========================================
+   RESPONSIVO
+========================================= */
+
+@media (max-width: 992px) {
+
+    .shalom-pilares-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .shalom-presentacion {
+        gap: 25px;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .shalom-presentacion {
+        grid-template-columns: 1fr;
+    }
+
+    .shalom-fotografia img {
+        height: 280px;
+    }
+
+    .shalom-pilares-grid {
+        grid-template-columns: 1fr;
+        max-width: 450px;
+        margin: 0 auto;
+    }
+
+    .shalom-pilar {
+        height: 310px;
+    }
+
+    .shalom-proposito-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .shalom-bienvenida,
+    .shalom-pilares,
+    .shalom-proposito {
+        margin-bottom: 50px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .shalom-pilar,
+    .shalom-pilar-icono,
+    .shalom-pilar-titulo,
+    .shalom-pilar-descripcion {
+        transition: none;
+    }
+}
