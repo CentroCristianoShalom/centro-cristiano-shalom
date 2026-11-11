@@ -1185,6 +1185,13 @@ html {
     border: 1px solid #254363;
     border-radius: 20px;
     text-align: left;
+
+    /* Eventos que todavía no tienen flyer */
+
+    .evento-tarjeta.sin-imagen {
+        grid-template-columns: 1fr;
+    }
+
 }
 
 .evento-imagen {
